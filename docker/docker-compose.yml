@@ -1,0 +1,10 @@
+version: '3.8'
+
+# Main docker-compose file for all homelab services
+# Individual services can be managed from their respective directories
+# or use this file to manage all services together
+
+networks:
+  homelab:
+    driver: bridge
+    name: homelab

@@ -1,0 +1,53 @@
+# Environment files
+.env
+*.env
+!env.example
+!.env.example
+
+# Docker volumes and data
+docker/*/data/
+docker/*/downloads/
+*.log
+
+# Backup files
+backups/
+*.sql
+*.sql.gz
+*.tar.gz
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Secrets and credentials
+secrets/
+*.pem
+*.key
+*.crt
+*.p12
+
+# Local configuration overrides
+local/
+override.yml
+docker-compose.override.yml
+

@@ -1,0 +1,46 @@
+[user]
+	# Configure these values:
+	# name = Your Name
+	# email = your.email@example.com
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = simple
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	cp = cherry-pick
+	df = diff
+	lg = log --oneline --decorate --graph --all
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
