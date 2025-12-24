@@ -7,21 +7,16 @@ services:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
       - TZ=${TZ:-UTC}
-      - WEBUI_PORT=${WEBUI_PORT:-8080}
+      - WEBUI_PORT=${WEBUI_PORT:-8081}
     volumes:
       - qbittorrent_config:/config
-      - ${QBITTORRENT_DOWNLOADS_PATH:-./downloads}:/downloads
+      - ${DOWNLOADS_PATH:-./downloads}:/downloads
     ports:
-      - "${QBITTORRENT_WEBUI_PORT:-8081}:8080"
-      - "${QBITTORRENT_BT_PORT:-6881}:6881"
-      - "${QBITTORRENT_BT_PORT:-6881}:6881/udp"
+      - "${WEBUI_PORT:-8081}:8081"
+      - "${BT_PORT:-6881}:6881"
+      - "${BT_PORT:-6881}:6881/udp"
     networks:
       - homelab
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
 volumes:
   qbittorrent_config:
