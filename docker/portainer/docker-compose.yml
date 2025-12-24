@@ -11,11 +11,6 @@ services:
       - "${PORTAINER_PORT:-9000}:9000"
     networks:
       - homelab
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9000/api/status"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
 volumes:
   portainer_data:
@@ -24,4 +19,3 @@ volumes:
 networks:
   homelab:
     external: true
-
