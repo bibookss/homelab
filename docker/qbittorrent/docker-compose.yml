@@ -10,7 +10,8 @@ services:
       - WEBUI_PORT=${WEBUI_PORT:-8081}
     volumes:
       - qbittorrent_config:/config
-      - ${DOWNLOADS_PATH:-./downloads}:/downloads
+      - ${DOWNLOADS_PATH:-./downloads}:/downloads/complete
+      - ${INCOMPLETE_PATH:-./incomplete}:/downloads/incomplete
     ports:
       - "${WEBUI_PORT:-8081}:8081"
       - "${BT_PORT:-6881}:6881"
@@ -25,4 +26,3 @@ volumes:
 networks:
   homelab:
     external: true
-

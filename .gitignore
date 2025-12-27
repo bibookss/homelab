@@ -8,6 +8,8 @@
 docker/*/data/
 docker/*/downloads/
 *.log
+docker/*/config/
+docker/*/cache/
 
 # Backup files
 backups/
